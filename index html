@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOJI-1-KENOBI Presale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background-tbd.jpg') no-repeat center center fixed; /* Placeholder for user-provided background */
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+        .hero {
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+        }
+        .tagline {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00b7ff; /* Neon blue (lightsaber glow) */
+            text-shadow: 0 0 10px #00b7ff;
+        }
+        .subheadline {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .presale-hook {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid #00b7ff;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: #00b7ff;
+            box-shadow: 0 0 15px #00b7ff; /* Pulsing glow effect */
+            cursor: pointer;
+        }
+        .section {
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section h2 {
+            font-size: 36px;
+            color: #00b7ff;
+            text-shadow: 0 0 5px #00b7ff;
+            text-transform: uppercase;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .tokenomics-list, .roadmap-list {
+            text-align: left;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .tokenomics-list p, .roadmap-list p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="tagline">Breaking the Chains—$DOJI Bites Back!</h1>
+        <p class="subheadline">Awaken the Jedi—Join the Force!</p>
+        <p class="presale-hook">The Countdown Has Begun—This Offer Is Only Available for a Limited Time, Don’t Let It Pass, BUY!</p>
+        <a href="#" class="cta-button">Join the Force</a>
+        <!-- Visual Placeholder -->
+        <div style="margin-top: 50px;">
+            <img src="foreground-tbd.png" alt="Ruff Jedi Shiba or Lightsaber Coin (TBD)" style="max-width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <!-- About the Coin Section -->
+    <section class="section">
+        <h2>About the Coin</h2>
+        <p>$DOJI is a little ruff around the edges—the Jedi of justice in a memecoin galaxy. Forged with cutting-edge tech, $DOJI blasts light years ahead of rival meme coins. Powered by xAI’s latest analytical breakthroughs, it’s preprogrammed for a warp-speed 100x post-launch—token burns, a masterful presale, and strategic fund allocation fuel its pure force-driven propulsion, paving a hyperspace road to the stars!</p>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="section">
+        <h2>Tokenomics</h2>
+        <p><strong>Total Supply:</strong> 1,000,000,000 $DOJI</p>
+        <p><strong>Starting Price:</strong> $0.0005 per $DOJI (presale start)</p>
+        <div class="tokenomics-list">
+            <p><strong>Presale:</strong> 25% (250,000,000 $DOJI) - "Join the Jedi uprising—grab $DOJI before the chains break!" Raises $1M-$2M (avg $0.004-$0.008, ending at $0.01).</p>
+            <p><strong>Liquidity:</strong> 30% (300,000,000 $DOJI) - "Pure force fuel—keeps $DOJI soaring through the galaxy."</p>
+            <p><strong>Community Rewards:</strong> 10% (100,000,000 $DOJI) - "For the ruff rebels who HODL and fight back!"</p>
+            <p><strong>Roadmap/Development:</strong> 20% (200,000,000 $DOJI) - "Propulsion to the stars—$DOJI’s galactic future."</p>
+            <p><strong>Team:</strong> 15% (150,000,000 $DOJI, locked 12 months) - "Jedi masters get their cut—locked for justice."</p>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section">
+        <h2>Hyperspace Roadmap to the Stars</h2>
+        <div class="roadmap-list">
+            <p><strong>Presale: The Jedi Uprising (13 Stages)</strong> - "The Force awakens—$DOJI’s presale ignites across 13 stages, shattering meme coin chains. From $0.0005, prices warp to $0.01 as conditions trigger—xAI’s masterful analytics fuel the rise, unleashing 250M tokens into the galaxy. Join early, or miss the hyperspace jump!"</p>
+            <p><strong>Post-Presale Phase 1: Token Burn Ignition</strong> - "Lightsabers slash—$DOJI burns unsold or reserved tokens, tightening supply. xAI’s analytics lock in the perfect burn, propelling value toward 100x warp speed."</p>
+            <p><strong>Post-Presale Phase 2: Hyperspace Launch</strong> - "$DOJI hits lightspeed—DEX listings (e.g., PancakeSwap) drop with 300M liquidity tokens. Ruff rebels trade, xAI’s fund allocation ignites the warp."</p>
+            <p><strong>Post-Presale Phase 3: Galactic Conquest</strong> - "Jedi strike—CEX listings (e.g., Binance) and 100M community rewards rain down. $DOJI’s 100x warp ($0.05) hits, fueled by xAI’s strategic plays."</p>
+            <p><strong>Post-Presale Phase 4: Beyond the Stars</strong> - "$DOJI rules—ongoing burns and xAI-driven upgrades (e.g., NFT drops) push past 100x to uncharted moons!"</p>
+        </div>
+    </section>
+</body>
+</html>
