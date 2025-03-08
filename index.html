@@ -3,92 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wallet Connect with AppKit</title>
+    <title>HIDDEN GEMS NETWORK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        * {
             margin: 0;
-            background-color: #f0f0f0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            color: #1e90ff;
+            background-color: rgba(255, 255, 255, 0.1);
             border-radius: 5px;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            padding: 8px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+        }
+
+        .search button {
+            background-color: #1e90ff;
+            color: #ffffff;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search button:hover {
+            background-color: #ffd700;
+            color: #121212;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 90px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, #1e90ff33, #121212);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero img {
+            width: 250px;
+            height: 250px;
+            border-radius: 10px;
+        }
+
+        .featured, .presales {
+            padding: 40px 20px;
+        }
+
+        .featured h2, .presales h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: #ffd700;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 350px;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            padding: 20px;
+            background-color: #00000099;
+            border-radius: 10px;
+        }
+
+        .swiper-slide img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+
+        .swiper-slide h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #00000099;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #ffd700;
+            color: #121212;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            background-color: #000000cc;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter form {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+
+        .newsletter input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 70%;
+            font-size: 16px;
+        }
+
+        .newsletter button {
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter button:hover {
+            background-color: #ffd700;
+            color: #121212;
+        }
+
+        .social {
+            margin: 20px 0;
+        }
+
+        .social a {
+            color: #ffffff;
+            font-size: 28px;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social a:hover {
+            color: #1e90ff;
+        }
+
+        .legal p, .legal a {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #cccccc;
+        }
+
+        .legal a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .legal a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: #000000cc;
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .search input {
+                width: 120px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .swiper-container {
+                height: 300px;
+            }
+
+            .swiper-slide img {
+                width: 120px;
+                height: 120px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Button to trigger wallet connection -->
-    <button id="connectButton">Connect Wallet</button>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="HIDDEN GEMS NETWORK Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-coins"></i> Top Presales</a></li>
+                <li><a href="#"><i class="fas fa-newspaper"></i> Crypto News</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Search Cryptos...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
 
-    <!-- Load AppKit, Ethers adapter, and Ethers v5 -->
-    <script src="https://unpkg.com/@reown/appkit@latest/dist/index.umd.js"></script>
-    <script src="https://unpkg.com/@reown/appkit-adapter-ethers5@latest/dist/index.umd.js"></script>
-    <script src="https://unpkg.com/ethers@5/dist/ethers.umd.min.js"></script>
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Welcome to Hidden Gems Network</h1>
+            <p>Discover the most promising crypto presales</p>
+            <img src="animated-gif.gif" alt="Animated Gem Illustration">
+        </section>
 
+        <section class="featured">
+            <h2>Featured Presales</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="featured1.png" alt="Featured Presale 1 Logo">
+                        <h3>Featured Presale 1</h3>
+                        <p>Innovative blockchain project with high potential.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="featured2.png" alt="Featured Presale 2 Logo">
+                        <h3>Featured Presale 2</h3>
+                        <p>Decentralized finance solution for the future.</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="featured3.png" alt="Featured Presale 3 Logo">
+                        <h3>Featured Presale 3</h3>
+                        <p>Next-gen NFT platform with unique features.</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="presales">
+            <h2>Top Presales</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="logo1.png" alt="Presale 1 Logo">
+                    <h3>Presale 1</h3>
+                    <p>A groundbreaking crypto project.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="logo2.png" alt="Presale 2 Logo">
+                    <h3>Presale 2</h3>
+                    <p>Secure and scalable blockchain.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="card">
+                    <img src="logo3.png" alt="Presale 3 Logo">
+                    <h3>Presale 3</h3>
+                    <p>Revolutionary DeFi platform.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <h3>Stay Updated</h3>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="social">
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="legal">
+            <p>&copy; 2023 HIDDEN GEMS NETWORK. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <p>Disclaimer: Investing in cryptocurrencies involves risk. Please do your own research.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
-        // 1. Use your provided projectId
-        const projectId = 'd708272626c65a90e5261aa6006da4c1';
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
 
-        // 2. Define networks (Arbitrum and Mainnet from your code)
-        const networks = [
-            ReownAppKit.networks.arbitrum,
-            ReownAppKit.networks.mainnet
-        ];
+            // Swiper Carousel
+            const swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
 
-        // 3. Metadata for your app
-        const metadata = {
-            name: 'Doji',
-            description: 'AppKit Example',
-            url: 'https://<your-username>.github.io/<repo-name>', // Replace with your GitHub Pages URL
-            icons: ['https://assets.reown.com/reown-profile-pic.png']
-        };
-
-        // 4. Initialize AppKit with your projectId
-        const appKit = ReownAppKit.createAppKit({
-            adapters: [new ReownAppKitAdapterEthers5.Ethers5Adapter()],
-            networks,
-            metadata,
-            projectId: projectId, // Explicitly using your projectId
-            features: {
-                analytics: true // Optional, as per your original code
-            }
+            // Card Animation Delays
+            document.querySelectorAll('.card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
         });
-
-        // 5. Connect button functionality
-        const connectButton = document.getElementById('connectButton');
-        connectButton.addEventListener('click', async () => {
-            try {
-                await appKit.open(); // Opens the wallet modal
-                console.log('Wallet connection initiated');
-            } catch (error) {
-                console.error('Failed to connect wallet:', error);
-                alert('Connection failed. Check console for details.');
-            }
-        });
-
-        // 6. Listen for successful connection
-        appKit.on('connect', (event) => {
-            console.log('Wallet connected:', event);
-            alert('Wallet connected successfully!');
-        });
-
-        // Optional: Handle disconnection
-        appKit.on('disconnect', () => {
-            console.log('Wallet disconnected');
-            alert('Wallet disconnected');
-        });
+    </script>
+    <!-- Google Analytics (Replace UA-XXXXX-Y with actual tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXX-Y');
     </script>
 </body>
 </html>
